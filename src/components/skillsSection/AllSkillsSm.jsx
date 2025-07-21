@@ -23,7 +23,7 @@ const skills = [
   { skill: "MySQL", icon: GrMysql },
 ]
 
-const AllSkillsSM = () => {
+const AllSkillsSm = () => {
   return (
     <div className='grid md:grid-cols-4 sm:grid-cols-2 gap-12 my-12'>
         {skills.map((item,index)=>{
@@ -36,4 +36,4 @@ const AllSkillsSM = () => {
   )
 }
 
-export default AllSkillsSM
+export default AllSkillsSm

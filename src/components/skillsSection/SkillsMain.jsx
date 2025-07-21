@@ -1,7 +1,7 @@
 import React from 'react'
 import AllSkills from './AllSkills'
 import SkillsText from './SkillsText'
-import AllSkillsSM from './AllSkillsSM'
+import AllSkillsSm from './AllSkillsSm'
 import { motion } from 'framer-motion'
 
 const SkillsMain = () => {
@@ -13,7 +13,7 @@ const SkillsMain = () => {
           <AllSkills/>
         </div>
         <div className='sm:block lg:hidden'>
-          <AllSkillsSM/>
+          <AllSkillsSm/>
         </div>
         
       </motion.div>
