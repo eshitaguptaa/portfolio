@@ -1,0 +1,227 @@
+@property --angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.skills-page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  background-image: radial-gradient(#333 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: backgroundPan 60s linear infinite;
+}
+
+/* Keyframe for the animated dots */
+@keyframes backgroundPan {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+/* Radial Glow Background */
+.skills-page-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px; /* Adjust size as needed */
+  height: 600px; /* Adjust size as needed */
+  background: radial-gradient(circle at center, rgba(251, 151, 24, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: radialPulse 10s ease-in-out infinite alternate;
+  z-index: 0; /* Ensures it's behind other elements */
+}
+
+/* Keyframe for the radial glow pulse */
+@keyframes radialPulse {
+  from {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.8;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+
+.ellipse-orbit {
+  position: relative;
+  width: 90vw;
+  max-width: 1000px;
+  height: 70vw;
+  max-height: 800px;
+  min-width: 320px;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotateOrbit 20s linear infinite;
+
+  --angle: 0deg;
+  --ellipse-x: clamp(120px, 40vw, 480px);
+  --ellipse-y: clamp(60px, 22vw, 260px);
+  --ellipse-tilt: 0deg;
+}
+
+@keyframes rotateOrbit {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.sun {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 22vw;
+  min-width: 120px;
+  max-width: 260px;
+  height: 22vw;
+  min-height: 120px;
+  max-height: 260px;
+  background: radial-gradient(circle at 30% 30%, #fb9718, #d28422);
+  color: #f1e1d9;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 50px #fac27b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.orbit-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  --icon-angle: 0deg;
+
+  transform:
+    rotate(var(--ellipse-tilt))
+    translate(
+      calc(cos(calc(var(--icon-angle) + var(--angle))) * var(--ellipse-x)),
+      calc(sin(calc(var(--icon-angle) + var(--angle))) * var(--ellipse-y))
+    )
+    rotate(calc(-1 * (var(--icon-angle) + var(--angle))))
+    rotate(calc(-1 * var(--ellipse-tilt)));
+
+  color: #15d1e9;
+  background: rgba(136, 229, 240, 0.12);
+  border-radius: 50%;
+  padding: 2.5vw;
+  min-padding: 16px;
+  max-padding: 26px;
+  box-shadow: 0 0 24px #15d1e96b;
+  font-size: 2.6rem;
+  transition: filter 0.3s, box-shadow 0.3s;
+}
+
+.orbit-icon:hover {
+  filter: brightness(1.3);
+  box-shadow: 0 0 40px #fb9718bb;
+}
+
+.icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fac27b;
+  color: #3f4441;
+  padding: 6px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: 0 0 10px #fb9718aa;
+  z-index: 5;
+}
+
+.icon-wrapper:hover .tooltip {
+  opacity: 1;
+}
+
+.orbit-ring {
+  position: absolute;
+  width: calc(var(--ellipse-x) * 2);
+  height: calc(var(--ellipse-y) * 2);
+  border: 2px solid rgba(241, 225, 217, 0.1);
+  border-radius: 50%;
+  transform: rotate(var(--ellipse-tilt));
+  box-shadow: 0 0 20px rgba(241, 225, 217, 0.05);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .ellipse-orbit {
+    width: 98vw;
+    height: 80vw;
+    min-width: 260px;
+    min-height: 260px;
+    --ellipse-x: clamp(60px, 30vw, 220px);
+    --ellipse-y: clamp(30px, 15vw, 120px);
+  }
+  .sun {
+    width: 18vw;
+    height: 18vw;
+    min-width: 80px;
+    min-height: 80px;
+    font-size: 1.1rem;
+  }
+  .orbit-icon {
+    padding: 1.5vw;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ellipse-orbit {
+    width: 100vw;
+    height: 90vw;
+    min-width: 180px;
+    min-height: 180px;
+    --ellipse-x: clamp(30px, 18vw, 80px);
+    --ellipse-y: clamp(15px, 9vw, 40px);
+  }
+  .sun {
+    width: 14vw;
+    height: 14vw;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 0.9rem;
+  }
+  .orbit-icon {
+    padding: 8px;
+    font-size: 1.2rem;
+  }
+}
+
