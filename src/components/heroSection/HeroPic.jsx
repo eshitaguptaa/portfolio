@@ -14,7 +14,7 @@ const HeroPic = () => {
     <div className='relative'>
       <div className='h-full flex items-center justify-center relative'>
         <motion.img 
-        src="../../public/images/HexaPic.png"
+        src="/images/HexaPic.png"
         alt="Eshita Gupta"
           className='max-h-[300px] w-auto relative z-10'
           style={{ scale: imageScale, rotate: imageRotate }}
