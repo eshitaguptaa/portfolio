@@ -40,13 +40,13 @@ const ProjectSection = () => {
   return (
     <section id='projects' className="w-full min-h-screen bg-transparent flex flex-col items-center justify-center py-20 relative z-10">
       <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }} className="max-w-[1500px] w-full mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-2 text-cyan">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-2 text-cyan">
           Solutions I've Built
         </h2>
         <p className="text-center text-lightGrey mb-12 max-w-2xl mx-auto">
           Here are some of my recent projects. Each project was carefully crafted with attention to detail, performance, and user experience.
         </p>
-        <div className="grid md:grid-cols-3 gap-0.5 justify-content items-center justify-items-center items-stretch">
+        <div className="grid md:grid-cols-3 gap-0 ml-[70px] mr-[70px]">
           {projects.map((project, idx) => (
             <motion.div
               key={project.name}
@@ -54,7 +54,7 @@ const ProjectSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.25, delay: 0.1 * idx, type: 'spring', stiffness: 200, damping: 15 }}
-              className="bg-lightBrown rounded-2xl shadow-lg shadow-cyan/20 border border-brown p-8 flex flex-col justify-between h-[600px] max-w-[450px] w-full mx-auto transition-transform duration-300 relative overflow-hidden hover:shadow-cyanShadow"
+              className="bg-lightBrown rounded-2xl shadow-lg shadow-cyan/20 border border-brown p-4 flex flex-col justify-between h-[480px] max-w-[340px] w-full mx-auto transition-transform duration-300 relative overflow-hidden hover:shadow-cyanShadow"
             >
               {/* Project Image */}
               <div className="w-full h-[180px] mb-2 rounded-xl overflow-hidden shadow-md border border-darkBrown">
@@ -70,17 +70,17 @@ const ProjectSection = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-darkBrown text-cyan text-xs font-semibold px-2 py-1 rounded-full border border-cyan"
+                      className="bg-darkBrown text-cyan text-[8px] font-semibold px-2 py-1 rounded-full border border-cyan"
                     >
                       {tech}
                     </span>
                   ))}
-                  <span className="ml-auto text-xs text-lightGrey font-mono">{project.year}</span>
+                  <span className="ml-auto text-[8px] text-lightGrey font-mono">{project.year}</span>
                 </div>
-                <h3 className="text-lg font-bold text-orange mb-2 leading-tight">
+                <h3 className="text-xs font-bold text-orange mb-2 leading-tight">
                   {project.name}
                 </h3>
-                <ul className="list-disc list-inside text-white text-lg space-y-1 pl-2">
+                <ul className="list-disc list-inside text-white text-xs space-y-1 pl-2">
                   {project.desc.map((line, i) => (
                     <li key={i}>{line}</li>
                   ))}
@@ -91,7 +91,7 @@ const ProjectSection = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-cyan hover:text-lightCyan transition-colors text-sm font-semibold"
+                  className="inline-flex items-center gap-1 text-cyan hover:text-lightCyan transition-colors text-[9px] font-semibold"
                 >
                   GitHub Repository
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">

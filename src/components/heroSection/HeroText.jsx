@@ -66,11 +66,11 @@ const copyToClipboard = (text, type) => {
 }
   return (
     <motion.div 
-      className="flex flex-col gap-4 h-full justify-center md:text-left md:mr-[100px] sm:text-center animate-fadeIn"
+      className="flex flex-col gap-4 h-full justify-center md:text-left md:mr-8 md:pl-8 pl-4 sm:text-center animate-fadeIn"
       style={{ opacity: textOpacity, scale: textScale }}
     >
       <motion.h2 
-        className='lg:text-2xl sm:text-xl uppercase text-cyan tracking-wide flex items-center gap-2'
+        className='lg:text-base sm:text-base uppercase text-cyan tracking-wide flex items-center gap-2'
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -79,7 +79,7 @@ const copyToClipboard = (text, type) => {
       </motion.h2>
 
       <motion.h1 
-        className='md:text-[2.8rem] lg:text-6xl sm:text-4xl font-bold font-special text-orange relative inline-block hover:scale-105 transition-transform duration-300'
+        className='md:text-2xl lg:text-4xl sm:text-xl font-bold font-special text-orange relative inline-block hover:scale-105 transition-transform duration-300'
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -99,7 +99,7 @@ const copyToClipboard = (text, type) => {
         ></motion.span>
       </motion.h1>
 
-      <p className='text-lg mt-4 text-white leading-relaxed'>
+      <p className='text-base mt-4 text-white leading-normal'>
         I'm a <span className="font-semibold text-cyan-100">{text}<span className="blinking-cursor">|</span></span><br />
         I love <span className="bg-gradient-to-r from-orange-400 to-pink-500 text-transparent bg-clip-text font-semibold">
           crafting user-friendly digital experiences

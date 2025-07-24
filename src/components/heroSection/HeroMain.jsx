@@ -23,18 +23,18 @@ const HeroMain = () => {
       initial={{ opacity: 0, y: 40 }} 
       whileInView={{ opacity: 1, y: 0 }} 
       transition={{ duration: 0.25 }} 
-      className='pt-64 pb-16 relative overflow-hidden'
+      className='pt-32 pb-8 min-h-screen relative overflow-hidden overflow-x-hidden'
       style={{ scale: heroScale, opacity: heroOpacity }}
     >
-        <div className='flex md:flex-row sm:flex-col max-w-[1200px] mx-auto justify-between items-center relative px-4'>
+        <div className='flex md:flex-row sm:flex-col max-w-[1100px] mx-auto justify-between items-center relative px-4 mt-16'>
             <motion.div style={{ y: textY }}>
-              <HeroText/>
+            <HeroText/>
             </motion.div>
             <motion.div style={{ y: picY }}>
-              <HeroPic/>
+            <HeroPic/>
             </motion.div>
             <motion.div style={{ y: gradientY }}>
-              <HeroGradient/>
+            <HeroGradient/>
             </motion.div>
         </div>
     </motion.div>

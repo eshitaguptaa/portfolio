@@ -29,7 +29,7 @@ const AllSkills = () => {
   return (
     <div>
       <motion.div
-        className='flex items-center justify-center relative gap-2 max-w-[1200px] mx-auto'
+        className='flex items-center justify-center relative gap-1 max-w-[1200px] mx-auto'
         whileInView={{}}
       >
         {skills.map((item, index) => (

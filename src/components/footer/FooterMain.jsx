@@ -11,10 +11,10 @@ const links =[
 const FooterMain = () => {
   return(
     <div className='px-4'>
-      <div className='w-full h-[1px] bg-lightGrey mt-24'></div>
+      <div className='w-full h-[1px] bg-lightGrey mt-8'></div>
       <div className='md:flex sm:hidden justify-between mt-4 max-w-[1200px] mx-auto'>
-        <p className='text-3xl text-lightGrey' >Eshita Gupta</p>
-        <ul className='flex gap-4 text-lightGrey text-xl'>
+        <p className='text-base text-lightGrey' >Eshita Gupta</p>
+        <ul className='flex gap-2 text-lightGrey text-xs'>
           {links.map((item, index) => {
             return <li key={index}>
               <Link 
@@ -29,7 +29,7 @@ const FooterMain = () => {
           })}
         </ul>
       </div>
-      <p className='max-w-[1200px] mx-auto text-right mt-2 mb-12 text-sm text-lightBrown'>© 2025 Eshita Gupta | All Rights Reserved.</p>
+      <p className='max-w-[1200px] mx-auto text-right mt-2 mb-4 text-[10px] text-lightBrown'>© 2025 Eshita Gupta | All Rights Reserved.</p>
     </div>
   )
 

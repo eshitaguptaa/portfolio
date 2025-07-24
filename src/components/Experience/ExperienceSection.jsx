@@ -54,78 +54,73 @@ const ExperienceSection = () => {
  
 
       {/* Main Experience Hero - Asymmetrical and impactful */}
-      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl z-10 mb-24">
-        <div className="text-left w-full md:w-1/2 mb-12 md:mb-0">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-special text-orange leading-none drop-shadow-xl">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-3xl z-10 mb-4 md:gap-20">
+        <div className="text-left w-full md:w-1/2 mb-1 md:mb-0">
+          <h1 className="text-lg md:text-2xl lg:text-2xl font-bold font-special text-orange leading-none drop-shadow-xl">
             Hands-On
           </h1>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-special text-cyan leading-none ml-4 mt-2">
+          <h2 className="text-lg md:text-2xl lg:text-2xl font-bold font-special text-cyan leading-none ml-1 mt-1">
             Learning
           </h2>
-          <p className="text-lg text-lightGrey max-w-md mt-6 ml-4 leading-relaxed">
+          <p className="text-xs text-lightGrey max-w-md mt-2 ml-1 leading-relaxed mb-10">
             A deep dive into the world of telecom and technology.
           </p>
         </div>
 
-        <div className="text-right w-full md:w-1/2 pr-0 md:pr-12 relative flex flex-col items-center md:items-end">
-            <div className="bg-darkBrown/60 backdrop-blur-md px-10 py-8 rounded-full shadow-2xl relative z-10 transform rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out">
-                <p className="text-2xl md:text-3xl font-bold font-special text-orange leading-tight flex items-center gap-2">
+        <div className="text-right w-full md:w-1/2 pr-0 md:pr-2 relative flex flex-col items-center md:items-end">
+            <div className="bg-darkBrown/60 backdrop-blur-md px-2 py-1 rounded-full shadow-2xl relative z-10 transform rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out">
+                <p className="text-base md:text-lg font-bold font-special text-orange leading-tight flex items-center gap-0.5">
                     {internshipDetails.role} @ 
                     <span className="text-[#124191]" style={{ color: '#124191' }}>
-                        <SiNokia size={95} />
+                        <SiNokia size={40} />
                     </span>
                 </p>
-                <p className="text-lg text-lightCyan mt-2">{internshipDetails.department}</p>
-                <p className="text-base text-lightGrey mt-1">{internshipDetails.location} &mdash; {internshipDetails.duration}</p>
+                <p className="text-xs text-lightCyan mt-1">{internshipDetails.department}</p>
+                <p className="text-xs text-lightGrey mt-1">{internshipDetails.location} &mdash; {internshipDetails.duration}</p>
             </div>
             {/* Abstract visual connector */}
-            <div className="w-px h-24 bg-gradient-to-b from-cyan to-transparent absolute -bottom-16 right-1/2 transform translate-x-1/2 hidden md:block"></div>
+            <div className="w-px h-8 bg-gradient-to-b from-cyan to-transparent absolute -bottom-4 right-1/2 transform translate-x-1/2 hidden md:block"></div>
         </div>
       </div>
 
       {/* Focus Areas - A dynamic, fluid row of key insights */}
-      <div className="w-full max-w-6xl z-10 mb-24 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="w-full max-w-2xl z-10 mb-2 mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
         {internshipDetails.focusAreas.map((area, index) => (
           <div
             key={index}
-            className="flex flex-col items-center text-center p-8 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 relative group"
+            className="flex flex-col items-center text-center p-1 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 relative group"
             style={{ filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.3))' }}
           >
             {/* Visual element that hints at a shape without being a box */}
             <div className="absolute inset-0 bg-darkGrey/40 rounded-full scale-x-0 group-hover:scale-x-100 group-hover:bg-darkGrey/60 transition-transform duration-500 ease-in-out opacity-70"></div>
             <div className="relative z-10 flex flex-col items-center">
-              <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-1 transform group-hover:scale-110 transition-transform duration-300">
                 {area.icon}
               </div>
-              <h4 className="text-xl md:text-2xl font-bold font-special text-white mb-2 leading-tight">{area.title}</h4>
-              <p className="text-lg text-lightGrey leading-relaxed">{area.description}</p>
+              <h4 className="text-xs md:text-base font-bold font-special text-white mb-0.5 leading-tight">{area.title}</h4>
+              <p className="text-xs text-lightGrey leading-relaxed">{area.description}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Key Achievements - A structured yet open list */}
-      <div className="w-full max-w-4xl z-10">
-        <h4 className="text-4xl md:text-5xl font-bold font-special text-orange text-center mb-12 tracking-wide">
+      <div className="w-full max-w-xl z-10 mt-14">
+        <h4 className="text-base md:text-2xl font-bold font-special text-orange text-center mb-8 tracking-wide">
           Key Contributions & Learnings
         </h4>
-        <ul className="space-y-10">
+        <ul className="space-y-1">
           {internshipDetails.responsibilities.map((item, index) => (
-            <li key={index} className="relative pl-16 group cursor-default">
-              {/* Custom, large, glowing "bullet" */}
-              <div className="absolute left-0 top-0 text-darkCyan text-4xl md:text-5xl font-extrabold transform -translate-x-1/2 -translate-y-2 rotate-6 group-hover:rotate-0 transition-transform duration-500 ease-in-out">
+            <li key={index} className="flex items-center gap-4 mb-4 group cursor-default">
+              <span className="text-2xl md:text-4xl font-extrabold text-cyan font-special min-w-[40px] text-center transition-all duration-300 group-hover:rotate-0 group-hover:drop-shadow-[0_0_10px_#15d1e9] rotate-[-6deg]">
                 {String(index + 1).padStart(2, '0')}
-                <span className="absolute inset-0 bg-darkCyan rounded-full mix-blend-screen opacity-0 group-hover:opacity-30 transition-opacity duration-300 blur-md"></span>
+              </span>
+              <div className="flex-1">
+                <p className="text-xs md:text-sm text-white text-left leading-relaxed">
+                  {item}
+                </p>
+                <div className="h-px bg-lightGrey/30 mt-2 mb-4 w-full scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700"></div>
               </div>
-              <p className="text-lg leading-relaxed text-white group-hover:text-lightCyan transition-colors duration-200">
-                {item}
-              </p>
-              {/* Subtle wave divider */}
-              {index < internshipDetails.responsibilities.length - 1 && (
-                <div className="relative w-full h-px mt-6 overflow-hidden">
-                  <div className="absolute w-full h-full bg-darkGrey/50 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
-                </div>
-              )}
             </li>
           ))}
         </ul>

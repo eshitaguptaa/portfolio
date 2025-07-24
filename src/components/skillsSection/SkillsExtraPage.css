@@ -62,16 +62,16 @@
   max-width: 1000px;
   height: 70vw;
   max-height: 800px;
-  min-width: 320px;
-  min-height: 320px;
+  min-width: 260px;
+  min-height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: rotateOrbit 20s linear infinite;
 
   --angle: 0deg;
-  --ellipse-x: clamp(120px, 40vw, 480px);
-  --ellipse-y: clamp(60px, 22vw, 260px);
+  --ellipse-x: clamp(150px, 30vw, 320px);
+  --ellipse-y: clamp(75px, 15vw, 160px);
   --ellipse-tilt: 0deg;
 }
 
@@ -88,16 +88,16 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 22vw;
-  min-width: 120px;
-  max-width: 260px;
-  height: 22vw;
-  min-height: 120px;
-  max-height: 260px;
+  width: 15vw;
+  min-width: 90px;
+  max-width: 240px;
+  height: 15vw;
+  min-height: 90px;
+  max-height: 240px;
+  font-size: 1.6rem;
   background: radial-gradient(circle at 30% 30%, #fb9718, #d28422);
   color: #f1e1d9;
   font-weight: bold;
-  font-size: 1.5rem;
   border-radius: 50%;
   box-shadow: 0 0 50px #fac27b;
   display: flex;
@@ -106,6 +106,8 @@
   transform: translate(-50%, -50%);
   z-index: 2;
   pointer-events: none;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .orbit-icon {
@@ -181,21 +183,28 @@
   pointer-events: none;
 }
 
+.hide-orbit-on-mobile { display: flex; }
+.show-mobile-list { display: none; }
+@media (max-width: 1000px) {
+  .hide-orbit-on-mobile { display: none !important; }
+  .show-mobile-list { display: block !important; }
+}
+
 @media (max-width: 900px) {
   .ellipse-orbit {
     width: 98vw;
     height: 80vw;
-    min-width: 260px;
-    min-height: 260px;
-    --ellipse-x: clamp(60px, 30vw, 220px);
-    --ellipse-y: clamp(30px, 15vw, 120px);
+    min-width: 180px;
+    min-height: 120px;
+    --ellipse-x: clamp(90px, 18vw, 160px);
+    --ellipse-y: clamp(45px, 9vw, 80px);
   }
   .sun {
-    width: 18vw;
-    height: 18vw;
-    min-width: 80px;
-    min-height: 80px;
-    font-size: 1.1rem;
+    width: 12vw;
+    height: 12vw;
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 1.2rem;
   }
   .orbit-icon {
     padding: 1.5vw;
@@ -207,17 +216,17 @@
   .ellipse-orbit {
     width: 100vw;
     height: 90vw;
-    min-width: 180px;
-    min-height: 180px;
-    --ellipse-x: clamp(30px, 18vw, 80px);
-    --ellipse-y: clamp(15px, 9vw, 40px);
+    min-width: 100px;
+    min-height: 60px;
+    --ellipse-x: clamp(50px, 10vw, 80px);
+    --ellipse-y: clamp(25px, 5vw, 40px);
   }
   .sun {
-    width: 14vw;
-    height: 14vw;
-    min-width: 48px;
-    min-height: 48px;
-    font-size: 0.9rem;
+    width: 9vw;
+    height: 9vw;
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 1rem;
   }
   .orbit-icon {
     padding: 8px;

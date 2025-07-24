@@ -11,19 +11,35 @@ import { MdOutlineDesignServices } from "react-icons/md";
 import { motion } from 'framer-motion';
 
 const orbitSkills = [
-  { icon: <SiMongodb size={48} />, name: 'MongoDB' },
-  { icon: <TbBrandMysql size={48} />, name: 'MySQL' },
-  { icon: <FaGithub size={48} />, name: 'Git' },
-  { icon: <VscVscode size={48} />, name: 'VS Code' },
-  { icon: <SiCanva size={48} />, name: 'Canva' },
-  { icon: <SiAnaconda size={48} />, name: 'Anaconda' },
-  { icon: <SiFigma size={48} />, name: 'Figma' },
-  { icon: <MdOutlineDesignServices size={48} />, name: 'UI/UX' }
+  { icon: <SiMongodb size={28} />, name: 'MongoDB' },
+  { icon: <TbBrandMysql size={28} />, name: 'MySQL' },
+  { icon: <FaGithub size={28} />, name: 'Git' },
+  { icon: <VscVscode size={28} />, name: 'VS Code' },
+  { icon: <SiCanva size={28} />, name: 'Canva' },
+  { icon: <SiAnaconda size={28} />, name: 'Anaconda' },
+  { icon: <SiFigma size={28} />, name: 'Figma' },
+  { icon: <MdOutlineDesignServices size={28} />, name: 'UI/UX' }
 ];
+
+// Responsive mobile skills list
+const MobileSkillsList = () => (
+  <div className="show-mobile-list w-full max-w-xs mx-auto mt-8">
+    <h3 className="text-center text-cyan text-lg font-bold mb-4">Beyond the Core</h3>
+    <ul className="grid grid-cols-2 gap-4">
+      {orbitSkills.map((item, idx) => (
+        <li key={idx} className="flex flex-col items-center justify-center bg-white/10 rounded-lg p-3">
+          <span className="text-cyan mb-1">{item.icon}</span>
+          <span className="text-xs text-white font-semibold text-center">{item.name}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 const SkillsExtraPage = () => (
   <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }} className="skills-page-container">
-    <div className="ellipse-orbit">
+    {/* Desktop Orbit Layout */}
+    <div className="ellipse-orbit hide-orbit-on-mobile">
       <div className="sun">Beyond the Core</div>
       <div className="orbit-ring"></div>
       {orbitSkills.map((item, idx) => {
@@ -44,6 +60,8 @@ const SkillsExtraPage = () => (
         );
       })}
     </div>
+    {/* Mobile List Layout */}
+    <MobileSkillsList />
   </motion.div>
 );
 
